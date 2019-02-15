@@ -3,13 +3,14 @@ import { connect } from 'react-redux';
 
 import logo from './logo.svg';
 import './App.css';
-import { simpleAction } from './actions/simpleAction'
+import { simpleAction, fetchPosts } from './actions/simpleAction'
 
 /* 
  * mapDispatchToProps
 */
 const mapDispatchToProps = dispatch => ({
-  simpleAction: () => dispatch(simpleAction())
+  simpleAction: () => dispatch(simpleAction()),
+  fetchPosts: () => dispatch(fetchPosts())
 })
 
 /* 
@@ -32,6 +33,10 @@ class App extends Component {
     this.props.simpleAction();
   }
 
+  fetchPostsAction = (event) => {
+    this.props.fetchPosts();
+  }
+
   render() {
     return (
       <div className="App">
@@ -45,6 +50,7 @@ class App extends Component {
           }
         </pre>
         <button onClick={this.simpleAction}>Test redux action</button>
+        <button onClick={this.fetchPostsAction}>Test redux fetch action</button>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
