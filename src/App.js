@@ -3,7 +3,12 @@ import { connect } from 'react-redux';
 
 import logo from './logo.svg';
 import './App.css';
-import { simpleAction, fetchPosts } from './actions/simpleAction'
+import { simpleAction } from './actions/simpleAction'
+import { fetchPosts } from './actions/postsActions'
+
+import Alert from 'react-s-alert';
+require('react-s-alert/dist/s-alert-default.css');
+require('react-s-alert/dist/s-alert-css-effects/slide.css');
 
 /* 
  * mapDispatchToProps
@@ -54,6 +59,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <Alert stack={{limit: 3}} />
       </div>
     );
   }
