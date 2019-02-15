@@ -26,3 +26,9 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.post {
+  text-align: left;
+  padding-left: 30px;
+  padding-right: 30px;
+}

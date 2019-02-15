@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 
 const SinglePost = ({post}) => {
     return (
-        <div>
-            <p>{post.title}</p>
+        <div className="post">
+            <h2>{post.title}</h2>
             <p>{post.body}</p>
+            <hr />
         </div>
     );
 }
@@ -16,16 +17,13 @@ export class Posts extends Component {
     }
 
     render() {
-        console.log(this.props.data);
         return(
             <div>
                 {
                     this.props.data.map(function(post) {
-
                         return <SinglePost key={post.id} post={post} />;
                     })
-                }
-                
+                }                
             </div>
         )
     }
