@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 
 import logo from './logo.svg';
 import './App.css';
-import { simpleAction } from './actions/simpleAction'
-import { fetchPosts } from './actions/postsActions'
+import { simpleAction } from './actions/simpleAction';
+import { fetchPosts } from './actions/postsActions';
+import { Posts } from './components/Posts'
 
 import Alert from 'react-s-alert';
 require('react-s-alert/dist/s-alert-default.css');
@@ -43,6 +44,9 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.props);
+    const posts = (this.props.postsReducer.posts ? this.props.postsReducer.posts : []);
+    console.log(posts);
     return (
       <div className="App">
         <header className="App-header">
@@ -59,6 +63,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <Posts data={posts} />
         <Alert stack={{limit: 3}} />
       </div>
     );

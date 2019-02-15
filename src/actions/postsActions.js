@@ -3,7 +3,7 @@ import {apiNames} from '../constants';
 import {errHandler} from '../utils';
 
 export const fetchPosts = () => dispatch => {
-    axios.get(apiNames.posts+"_").then(response => {
+    axios.get(apiNames.posts).then(response => {
         dispatch({
             type: 'POSTS_FETCH_SUCCESS',
             posts: response.data
